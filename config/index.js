@@ -1,6 +1,6 @@
 module.exports = {
   node: {
-    url: 'http://localhost:3001'
+    url: 'https://segment-node.herokuapp.com'
   },
   ruby: {
     url: 'http://localhost:3002',

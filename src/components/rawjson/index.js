@@ -9,7 +9,6 @@ export default class RawJson extends Component {
   };
 
   componentWillReceiveProps (props) {
-    console.log('the props are ',this.props.validJSON, props.validJSON)
     if (props.validJSON !== this.props.validJSON) {
       this.setState({
         validJSON: props.validJSON
