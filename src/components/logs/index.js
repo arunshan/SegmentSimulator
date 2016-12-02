@@ -6,9 +6,11 @@ export default class Logs extends Component {
     logs: this.props.logs || []
   };
   componentWillReceiveProps(props) {
-    this.setState({
-      logs: props.logs
-    })
+    if (props.logs.length !== this.props.logs.length) {
+      this.setState({
+        logs: props.logs
+      })
+    }
   }
   getStatusStyle (status) {
     if (status === 'success') {
@@ -23,7 +25,7 @@ export default class Logs extends Component {
     logs.map((log, i) => {
       logsView.push(<div key={'key_' + i} className="Logs-row">
         <div className={this.getStatusStyle(log.status)}>
-          {log.status}
+          {log.status + '  :  ' + log.eventName}
         </div>
         <div className="Logs-message">
           {JSON.stringify(log.message)}

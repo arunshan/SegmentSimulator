@@ -48,7 +48,8 @@ class App extends Component {
         .then(data => {
           logs.push({
             status: data.status,
-            message: data.message
+            message: data.message,
+            eventName: selectedEvent
           })
           this.setState({
             logs
