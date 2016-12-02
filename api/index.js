@@ -1,6 +1,6 @@
 const config = require('../config')
 
-exports.simulate = (language, eventName, json) => {
+exports.simulate = function (language, eventName, json) {
   let languageURL = ''
   switch(language) {
     case 'java':
