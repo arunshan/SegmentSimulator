@@ -1,7 +1,8 @@
+'use strict'
 const config = require('../config')
 
 exports.simulate = function (language, eventName, json) {
-  let languageURL = ''
+  var languageURL = ''
   switch(language) {
     case 'java':
       languageURL = config.java.url
