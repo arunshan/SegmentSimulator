@@ -8,7 +8,7 @@ export default class Library extends Component {
   };
 
   getLibraries() {
-    return (<select id="lang" onChange={this.change} value={this.state.value}>
+    return (<select id="lang" onChange={(e) => this.change(e)} value={this.state.value}>
       <option value="nodejs">NodeJS</option>
       <option value="ruby">Ruby on rails</option>
       <option value="java">Java</option>
@@ -17,8 +17,9 @@ export default class Library extends Component {
     </select>)
   }
 
-  change(event) {
-    this.setState({value: event.target.value});
+  change(e) {
+    this.props.setLibrary(e.target.value)
+    this.setState({value: e.target.value})
   }
 
   render () {

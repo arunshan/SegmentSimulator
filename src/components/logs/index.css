@@ -1,0 +1,28 @@
+.Logs-container {
+  width: 80%;
+  height: 300px;
+  background-color: #000000;
+  align-self: center;
+  margin-top: 20px;
+  padding: 10px;
+  overflow: auto;
+}
+
+.Logs-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.Logs-success {
+  color: green;
+}
+
+.Logs-failure {
+  color: red;
+}
+
+.Logs-message {
+  color: #ffffff;
+}

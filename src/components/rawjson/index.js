@@ -4,22 +4,42 @@ import './index.css'
 
 export default class RawJson extends Component {
   state = {
-    json: ''
+    json: '',
+    validJSON: true
   };
 
-  updateJson(json) {
-    this.setState({
-      json
-    })
+  componentWillReceiveProps (props) {
+    console.log('the props are ',this.props.validJSON, props.validJSON)
+    if (props.validJSON !== this.props.validJSON) {
+      this.setState({
+        validJSON: props.validJSON
+      })
+    }
   }
 
+  updateJson = (e) => {
+    this.setState({
+      json: e.target.value
+    })
+    this.props.setJSON(e.target.value)
+  };
+
   getTextArea() {
-    return <textarea className="RawJson-textarea" value={this.state.json} onChange={this.updateJson} />
+    return <textarea className="RawJson-textarea"
+      value={this.state.json}
+      onChange={this.updateJson} />
+  }
+
+  showError() {
+    if (!this.state.validJSON) {
+      return <div className={'RawJson-error'}>{'Invalid JSON'}</div>
+    }
   }
 
   render () {
     return (<div className="RawJson-container">
       {this.getTextArea()}
+      {this.showError()}
     </div>)
   }
 }

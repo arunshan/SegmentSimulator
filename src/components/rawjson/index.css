@@ -5,9 +5,16 @@
   align-self: center;
   background-color: #ffffff;
   justify-content: center;
+  flex-direction: column;
 }
 
 .RawJson-textarea {
   width: 80%;
   height: 200px;
+  align-self: center;
+}
+
+.RawJson-error {
+  color: red;
+  align-self: center;
 }

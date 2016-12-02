@@ -20,6 +20,7 @@ export default class Events extends Component {
     const selected = e.target.querySelector('.Event-row-item-content') ?
       e.target.querySelector('.Event-row-item-content').innerHTML :
       e.target.innerHTML
+    this.props.setEvent(selected)
     this.setState({
       selected
     })
