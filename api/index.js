@@ -1,5 +1,5 @@
 'use strict'
-const config = require('../config')
+var config = require('../config')
 
 exports.simulate = function (language, eventName, json) {
   var languageURL = ''
@@ -20,7 +20,7 @@ exports.simulate = function (language, eventName, json) {
       languageURL = config.node.url
       break
   }
-  return fetch(languageURL + `/api/${eventName.toLowerCase()}`, {
+  return fetch(languageURL + "/api/" + eventName.toLowerCase(), {
     method: 'POST',
     headers: {
       'Accept': 'application/json',
@@ -28,8 +28,10 @@ exports.simulate = function (language, eventName, json) {
     },
     body: JSON.stringify({json})
   })
-  .then(data => data.json())
-  .then(data => {
+  .then(function (data) {
+    return data.json()
+  })
+  .then(function(data) {
     return data
   })
 }
