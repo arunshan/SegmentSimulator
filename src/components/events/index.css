@@ -26,18 +26,17 @@
   justify-content: center;
   text-align: center;
   margin-left: 5px;
+  border-radius: 50px;
 }
 
 .Event-row-item:hover {
   background-color: #f1f1f1;
   color: #000000;
-  border-radius: 50px;
 }
 
 .Event-row-selected {
   background-color: #49b882;
   color: #ffffff;
-  border-radius: 50px;
 }
 
 .Event-row-item-content {

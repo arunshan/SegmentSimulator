@@ -6,11 +6,17 @@ export default class RawJson extends Component {
   state = {
     json: ''
   };
-  updateJson (json) {
+
+  updateJson(json) {
+    this.setState({
+      json
+    })
   }
-  getTextArea () {
+
+  getTextArea() {
     return <textarea className="RawJson-textarea" value={this.state.json} onChange={this.updateJson} />
   }
+
   render () {
     return (<div className="RawJson-container">
       {this.getTextArea()}

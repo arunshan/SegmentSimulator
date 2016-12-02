@@ -7,6 +7,7 @@
   font-family: 'Segment Circular Std','Helvetica Neue',Helvetica,Arial,sans-serif;
   display: flex;
   flex-direction: column;
+  color: #425e78;
 }
 
 select {
