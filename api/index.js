@@ -26,7 +26,9 @@ exports.simulate = function (language, eventName, json) {
       'Accept': 'application/json',
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({json})
+    body: JSON.stringify({
+      json: json
+    })
   })
   .then(function (data) {
     return data.json()
